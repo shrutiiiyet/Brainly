@@ -1,2 +1,5 @@
-export const JWT_SECRET="shrutiiiii"
-export const MONGO_URL="mongodb://localhost:27017/brainly"
+import dotenv from 'dotenv';
+
+dotenv.config();
+export const JWT_SECRET = process.env.JWT_SECRET;
+export const MONGO_URL = process.env.MONGO_URL;
