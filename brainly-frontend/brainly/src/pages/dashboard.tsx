@@ -8,10 +8,12 @@ import { SideBar } from '../components/ui/Sidebar'
 import { useContent } from '../hooks/useContent'
 import { BACKEND_URL } from '../config'
 import axios from 'axios'
+import { Greeting } from '../components/ui/Greeting'
 
 function DashBoard() {
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [content, setContent] = useState(false);
   const { contents, refresh } = useContent();
 
   useEffect(() => {
@@ -22,7 +24,7 @@ function DashBoard() {
     <>
     <div>
       <SideBar/>       
-    </div>
+    </div>    
     <div>
         <CreateContentModal open={modalOpen} onClose={() => {
           setModalOpen(false)
@@ -42,6 +44,7 @@ function DashBoard() {
               alert(sharedUrl);
             }}></Button>
           </div>
+          <Greeting props={setModalOpen}/>
           <div className='flex gap-4 flex-wrap'>
             {contents.map(({type, link, title}) => <Card 
               type={type} 

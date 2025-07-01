@@ -1,7 +1,12 @@
 import { Brainly } from "../../icons/BrainlyIcon";
 import { TwitterIcon } from "../../icons/TwitterIcon";
 import { YoutubeIcon } from "../../icons/YoutubeIcon";
+import { DocumentIcon } from '../../icons/DocumentIcon';
 import { SidebarComponent } from "./SidebarComponent";
+import { InstagramIcon } from "../../icons/InstagramIcon";
+import { PinterestIcon } from "../../icons/PinterestIcon";
+import { LogoutIcon } from "../../icons/LogoutIncon";
+import { Button } from "./Button";
 
 export function SideBar() {
     
@@ -16,7 +21,13 @@ export function SideBar() {
             <div className="pt-8 pl-4">
                 <SidebarComponent text={"Twitter"} icon={<TwitterIcon/>}/>
                 <SidebarComponent text={"Youtube"} icon={<YoutubeIcon/>}/>
+                <SidebarComponent text={"Instagram"} icon={<InstagramIcon/>}/>
+                <SidebarComponent text={"Pinterest"} icon={<PinterestIcon/>}/>
+                <SidebarComponent text={"Document"} icon={<DocumentIcon/>}/>
             </div>
-        </div>
+            <div className="pt-75">
+                 <Button size="md" text='Logout' startIcon={<LogoutIcon/>} onClick={()=>{}} variant='primary'></Button> 
+            </div>
+            </div>
     </>
 }
