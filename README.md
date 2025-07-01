@@ -35,20 +35,20 @@
 
 ### 1. Clone the Repository
 
-git clone https://github.com/shrutiiiyet/Brainly.git
-cd BRAINLY
+- git clone https://github.com/shrutiiiyet/Brainly.git
+- cd BRAINLY
 
 ### 2. Install dependencies
 
 #### Frontend:
-cd brainly-fronted/brainly
-npm install
+- cd brainly-fronted/brainly
+- npm install
 
 #### Backend
-cd ../brainly-backend
-npm install
+- cd ../brainly-backend
+- npm install
 
-### 3. Set environment vraibles
+### 3. Set environment variables
 
 ### 4. Run the project
 
