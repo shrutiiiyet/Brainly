@@ -56,7 +56,8 @@ npm install
 
 ## 📸 Screenshots
 
-![Homepage](./Screenshots/Homepage.png)
+HomePage
+![Homepage](./Screenshots/BrainlyHomepage.png)
 
 ---
 
