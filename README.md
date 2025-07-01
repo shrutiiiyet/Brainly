@@ -67,5 +67,3 @@ npm install
 
 ## 📄 License
 MIT © Shruti Jadhav
-
-
