@@ -88,6 +88,7 @@ const addContent = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     const link = req.body.link;
     const title = req.body.title;
     const type = req.body.type;
+    console.log(config_1.JWT_SECRET);
     yield db_1.ContentModel.create({
         link,
         title,

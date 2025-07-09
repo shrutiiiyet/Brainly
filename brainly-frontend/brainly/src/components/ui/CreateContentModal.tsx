@@ -8,9 +8,9 @@ import axios from "axios";
 enum ContentType {
     Youtube = "youtube",
     Twitter = 'twitter',
-    Instagram = 'Instagram',
-    Pinterest = 'Pinterest',
-    Document = 'Document'
+    Instagram = 'instagram',
+    Pinterest = 'pinterest',
+    Document = 'document'
 }
 
 export function CreateContentModal({open, onClose}) {
@@ -65,15 +65,15 @@ export function CreateContentModal({open, onClose}) {
                                     }}></Button>
 
                                     <Button text='Instagram'variant={type == ContentType.Instagram ? "primary" : "secondary"} onClick={() => {
-                                        setType(ContentType.Youtube)
+                                        setType(ContentType.Instagram)
                                     }}></Button>
 
                                     <Button text='Pinterest'variant={type == ContentType.Pinterest ? "primary" : "secondary"} onClick={() => {
-                                        setType(ContentType.Youtube)
+                                        setType(ContentType.Pinterest)
                                     }}></Button>
 
                                     <Button text='Document'variant={type == ContentType.Document ? "primary" : "secondary"} onClick={() => {
-                                        setType(ContentType.Youtube)
+                                        setType(ContentType.Document)
                                     }}></Button>
 
                                 </div>

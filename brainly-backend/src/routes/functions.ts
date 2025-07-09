@@ -72,7 +72,7 @@ export const signin = async(req: Request, res: Response) => {
         if(success) {
             const token = jwt.sign({
                 id: user._id
-            }, JWT_SECRET);
+            }, JWT_SECRET as string);
 
             res.json ({
                 token
@@ -94,6 +94,7 @@ export const addContent = async(req: Request, res: Response) => {
     const link = req.body.link;
     const title = req.body.title;
     const type = req.body.type;
+    console.log(JWT_SECRET);
 
     await ContentModel.create ({
         link,

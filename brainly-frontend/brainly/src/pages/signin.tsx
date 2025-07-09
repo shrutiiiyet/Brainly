@@ -29,6 +29,7 @@ export function Signin() {
     return <>
         <div className="h-screen w-screen bg-gray-200 flex justify-center items-center">
             <div className="bg-white rounded-xl border min-w-48 flex flex-col p-8">
+                <p className="font-bold font-stretch-50%"> Sign in to Brainly!</p>
                 <Input reference={usernameRef} placeholder="Enter username"></Input>
                 <Input reference={passwordRef} placeholder="Enter password"></Input>
 
