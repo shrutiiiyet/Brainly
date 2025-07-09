@@ -59,6 +59,9 @@
 HomePage
 ![Homepage](./Screenshots/BrainlyHomepage.png)
 
+HomePage
+![Content](./Screenshots/Content.png)
+
 ---
 
 ## ⭐️ Feedback & Contributions

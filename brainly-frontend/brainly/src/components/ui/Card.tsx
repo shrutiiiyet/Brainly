@@ -14,7 +14,7 @@ interface CardProps {
 export function Card(props: CardProps) {
 
     return <>
-        <div className="p-8 bg-white rounded-md max-w-96 max-h-65 border-gray-200 border">
+        <div className="p-8 bg-white rounded-md max-w-96 max-h-82 border-gray-200 border">
             <div className="flex justify-between">
                 <div className="flex items-center text-md">
                     <div className="pr-2 text-gray-500">
@@ -45,7 +45,7 @@ export function Card(props: CardProps) {
                 </div>
                 
                 <div>
-                    {props.type === "twitter" && <blockquote className="twitter-tweet max-h-65">
+                    {props.type === "twitter" && <blockquote className="twitter-tweet">
                         <a href={props.link.replace("x.com", "twitter.com")}></a> 
                     </blockquote>}
                 </div>

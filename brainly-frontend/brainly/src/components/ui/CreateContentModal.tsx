@@ -78,7 +78,7 @@ export function CreateContentModal({open, onClose}) {
 
                                 </div>
                                 <div className="flex justify-center">
-                                    <Button onClick={addContent} variant="primary" text="Submit" ></Button>
+                                    <Button onClick={addContent} variant="primary" text="Submit"></Button>
                                 </div>
                             </span>
                     </div>

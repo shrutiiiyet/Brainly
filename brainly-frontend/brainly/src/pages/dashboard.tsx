@@ -29,8 +29,8 @@ function DashBoard() {
         <CreateContentModal open={modalOpen} onClose={() => {
           setModalOpen(false)
           }}/>
-        <div className='p-4 ml-72 min-h-screen bg-gray-100 border-2'>
-          <div className='flex justify-end gap-4'>
+        <div className='p-4 ml-72 min-h-screen bg-gray-100 border-2 '>
+          <div className='flex justify-end gap-4 pb-3'>
             <Button variant={'primary'}startIcon={<PlusIcon/>} text={'Add content'} size='md' onClick={() => {setModalOpen(true)}}></Button>
             <Button variant={'secondary'} startIcon={<ShareIcon/>} text={'Share brain'} size='md' onClick={async() => {
               const response = await axios.post(`${BACKEND_URL}/api/v1/brain/share`, {
@@ -44,7 +44,7 @@ function DashBoard() {
               alert(sharedUrl);
             }}></Button>
           </div>
-          <Greeting props={setModalOpen}/>
+          <Greeting props={content}/>
           <div className='flex gap-4 flex-wrap'>
             {contents.map(({type, link, title}) => <Card 
               type={type} 
