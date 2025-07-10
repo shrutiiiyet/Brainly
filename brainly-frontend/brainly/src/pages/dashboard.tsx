@@ -15,6 +15,7 @@ function DashBoard() {
   const [modalOpen, setModalOpen] = useState(false);
   const [content, setContent] = useState(false);
   const { contents, refresh } = useContent();
+  const [curr, setCurr] = useState("All");
 
   useEffect(() => {
     refresh();

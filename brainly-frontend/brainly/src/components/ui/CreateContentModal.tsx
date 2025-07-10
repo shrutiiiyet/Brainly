@@ -10,13 +10,14 @@ enum ContentType {
     Twitter = 'twitter',
     Instagram = 'instagram',
     Pinterest = 'pinterest',
-    Document = 'document'
+    Facebook = 'facebook'
 }
 
 export function CreateContentModal({open, onClose}) {
 
     const titleRef = useRef<HTMLInputElement>();
     const linkRef = useRef<HTMLInputElement>();
+    
     const [type, setType] = useState(ContentType.Youtube);
 
     const addContent = async() => {
@@ -72,8 +73,8 @@ export function CreateContentModal({open, onClose}) {
                                         setType(ContentType.Pinterest)
                                     }}></Button>
 
-                                    <Button text='Document'variant={type == ContentType.Document ? "primary" : "secondary"} onClick={() => {
-                                        setType(ContentType.Document)
+                                    <Button text='Facebook'variant={type == ContentType.Facebook ? "primary" : "secondary"} onClick={() => {
+                                        setType(ContentType.Facebook)
                                     }}></Button>
 
                                 </div>
