@@ -62,6 +62,9 @@ HomePage
 Content
 ![Content](./Screenshots/Content.png)
 
+Dashboard
+![DashBoard](./Screenshots/Screenshot(89).png)
+
 ---
 
 ## ⭐️ Feedback & Contributions
