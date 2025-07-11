@@ -113,7 +113,7 @@ const displayContent = (req, res) => __awaiter(void 0, void 0, void 0, function*
 exports.displayContent = displayContent;
 const displayContentWithFilter = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const userId = req.userId;
-    const filter = req.body.filter;
+    const filter = req.query.filter;
     const content = yield db_1.ContentModel.find({
         userId: userId,
         type: filter

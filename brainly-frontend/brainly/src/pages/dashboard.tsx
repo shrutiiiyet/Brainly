@@ -13,16 +13,22 @@ import { Greeting } from '../components/ui/Greeting'
 function DashBoard() {
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [selectedType, setSelectedType] = useState("All");
   const { contents, refresh } = useContent();
 
+  const handleFilterChange = (type: string) => {
+    setSelectedType(type);
+    refresh(type === "All" ? undefined : type);
+  };
+
   useEffect(() => {
-    refresh();
+    refresh(selectedType === "All" ? undefined : selectedType);
   }, [modalOpen])
   
   return (
     <>
     <div>
-      <SideBar/>       
+      <SideBar selectedType={selectedType} onSelectType={handleFilterChange} />       
     </div>    
     <div>
         <CreateContentModal open={modalOpen} onClose={() => {

@@ -124,7 +124,7 @@ export const displayContent = async(req: Request, res: Response) => {
 export const displayContentWithFilter = async(req: Request, res: Response) => {
 
     const userId = req.userId;
-    const filter = req.body.filter;
+    const filter = req.query.filter;
 
     const content = await ContentModel.find({
         userId: userId,
