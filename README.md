@@ -59,7 +59,7 @@
 HomePage
 ![Homepage](./Screenshots/BrainlyHomepage.png)
 
-HomePage
+Content
 ![Content](./Screenshots/Content.png)
 
 ---
