@@ -63,7 +63,7 @@ Content
 ![Content](./Screenshots/Content.png)
 
 Dashboard
-![DashBoard](./Screenshots/Screenshot (89).png)
+![Dashboard](./Screenshots/Dashboard.png)
 
 ---
 
