@@ -121,6 +121,21 @@ export const displayContent = async(req: Request, res: Response) => {
     })
 }
 
+export const displayContentWithFilter = async(req: Request, res: Response) => {
+
+    const userId = req.userId;
+    const filter = req.body.filter;
+
+    const content = await ContentModel.find({
+        userId: userId,
+        type: filter
+    })
+
+    res.json({
+        content
+    })
+}
+
 export const deleteContent = async(req: Request, res: Response) => {
 
     const contentId = req.body.contentId;

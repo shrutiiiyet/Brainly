@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { UserMiddleWare } from '../middleware';
-import { signup, signin, addContent, displayContent, deleteContent, searchContent, shareBrain, accessBrain } from './functions';
+import { signup, signin, addContent, displayContent, deleteContent, searchContent, shareBrain, accessBrain, displayContentWithFilter } from './functions';
 
 const UserRouter = Router();
 
@@ -12,6 +12,7 @@ UserRouter.post('/signin', signin)
 
 UserRouter.post('/content', UserMiddleWare, addContent)
 UserRouter.get('/content', UserMiddleWare, displayContent)
+UserRouter.get('/content/filter', UserMiddleWare, displayContentWithFilter)
 UserRouter.delete('/content', UserMiddleWare, deleteContent)
 UserRouter.get('/content/title', UserMiddleWare, searchContent)
 

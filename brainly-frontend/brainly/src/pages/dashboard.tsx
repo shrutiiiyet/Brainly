@@ -13,9 +13,7 @@ import { Greeting } from '../components/ui/Greeting'
 function DashBoard() {
 
   const [modalOpen, setModalOpen] = useState(false);
-  const [content, setContent] = useState(false);
   const { contents, refresh } = useContent();
-  const [curr, setCurr] = useState("All");
 
   useEffect(() => {
     refresh();
@@ -45,13 +43,15 @@ function DashBoard() {
               alert(sharedUrl);
             }}></Button>
           </div>
-          <Greeting props={content}/>
           <div className='flex gap-4 flex-wrap'>
             {contents.map(({type, link, title}) => <Card 
               type={type} 
               link={link} 
               title={title} 
             />)}
+          </div>
+          <div className='align-center'>
+            {contents.length === 0 && <Greeting/>}
           </div>
         </div>
       </div>

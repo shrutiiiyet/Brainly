@@ -10,6 +10,7 @@ UserRouter.post('/signin', functions_1.signin);
 //CONTENT ROUTES
 UserRouter.post('/content', middleware_1.UserMiddleWare, functions_1.addContent);
 UserRouter.get('/content', middleware_1.UserMiddleWare, functions_1.displayContent);
+UserRouter.get('/content/filter', middleware_1.UserMiddleWare, functions_1.displayContentWithFilter);
 UserRouter.delete('/content', middleware_1.UserMiddleWare, functions_1.deleteContent);
 UserRouter.get('/content/title', middleware_1.UserMiddleWare, functions_1.searchContent);
 //SHARING BRAIN

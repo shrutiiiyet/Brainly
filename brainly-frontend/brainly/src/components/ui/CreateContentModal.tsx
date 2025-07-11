@@ -5,7 +5,7 @@ import { Input } from "./ModalInput"
 import { useRef, useState } from "react";
 import axios from "axios";
 
-enum ContentType {
+export enum ContentType {
     Youtube = "youtube",
     Twitter = 'twitter',
     Instagram = 'instagram',

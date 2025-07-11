@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.accessBrain = exports.shareBrain = exports.searchContent = exports.deleteContent = exports.displayContent = exports.addContent = exports.signin = exports.signup = void 0;
+exports.accessBrain = exports.shareBrain = exports.searchContent = exports.deleteContent = exports.displayContentWithFilter = exports.displayContent = exports.addContent = exports.signin = exports.signup = void 0;
 const zod_1 = require("zod");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
@@ -111,6 +111,18 @@ const displayContent = (req, res) => __awaiter(void 0, void 0, void 0, function*
     });
 });
 exports.displayContent = displayContent;
+const displayContentWithFilter = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const userId = req.userId;
+    const filter = req.body.filter;
+    const content = yield db_1.ContentModel.find({
+        userId: userId,
+        type: filter
+    });
+    res.json({
+        content
+    });
+});
+exports.displayContentWithFilter = displayContentWithFilter;
 const deleteContent = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const contentId = req.body.contentId;
     const success = yield db_1.ContentModel.deleteOne({

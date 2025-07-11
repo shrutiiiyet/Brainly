@@ -9,7 +9,6 @@ interface CardProps {
     title:string;
     link: string;
     type: "twitter" | "youtube" | "pinterest" | "facebook" | "instagram";
-    description: string
 }
 
 export function Card(props: CardProps) {
@@ -22,12 +21,12 @@ export function Card(props: CardProps) {
         <div className="p-8 bg-white rounded-md max-w-96 border-gray-200 border max-h-300">
             <div className="flex justify-between">
                 <div className="flex items-center text-md">
-                    <div className="pr-2 text-gray-500">
-                        {props.type == 'youtube' && <YoutubeIcon/>}
-                        {props.type == 'twitter' && <TwitterIcon/>}
-                        {props.type == 'facebook' && <FacebookIcon/>}
-                        {props.type == 'instagram' && <InstagramIcon/>}
-                        {props.type == 'pinterest' && <PinterestIcon/>}
+                    <div className="pr-2 text-gray-500 cursor-pointer">
+                        {props.type == 'youtube' && <a href="https://www.youtube.com/"><YoutubeIcon/></a>}
+                        {props.type == 'twitter' && <a href="https://www.x.com"> <TwitterIcon/></a>}
+                        {props.type == 'facebook' && <a href="https://www.facebook.com"><FacebookIcon/></a>}
+                        {props.type == 'instagram' && <a href="https://www.instagram.com"><InstagramIcon/></a>}
+                        {props.type == 'pinterest' && <a href="https://www.pinterest.com"><PinterestIcon/></a>}
                     </div>
                     <div className="font-medium">
                         {props.title}
