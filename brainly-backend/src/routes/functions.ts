@@ -94,7 +94,6 @@ export const addContent = async(req: Request, res: Response) => {
     const link = req.body.link;
     const title = req.body.title;
     const type = req.body.type;
-    console.log(JWT_SECRET);
 
     await ContentModel.create ({
         link,
@@ -138,12 +137,20 @@ export const displayContentWithFilter = async(req: Request, res: Response) => {
 
 export const deleteContent = async(req: Request, res: Response) => {
 
+    const userId = req.userId;
     const contentId = req.body.contentId;
+    console.log(userId);
     const success = await ContentModel.deleteOne ({
         _id: contentId,
-        userId: req.userId,
     })
 
+    console.log(success)
+
+    if(success.deletedCount === 0) {
+        res.status(403).json ({
+            message: "No content found"
+        })
+    }
     if(success) {
     res.json ({
         message: "Content deleted"

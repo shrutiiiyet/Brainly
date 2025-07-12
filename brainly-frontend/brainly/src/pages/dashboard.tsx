@@ -50,10 +50,21 @@ function DashBoard() {
             }}></Button>
           </div>
           <div className='flex gap-4 flex-wrap'>
-            {contents.map(({type, link, title}) => <Card 
+            {contents.map(({type, link, title, _id}) => <Card 
               type={type} 
               link={link} 
               title={title} 
+              onClick={async() => {
+                await axios.delete(`${BACKEND_URL}/api/v1/content`, {
+                  data: {
+                    contentId: _id
+                  }, 
+                  headers: {
+                    "Authorization": localStorage.getItem('token')
+                  }
+                })
+                refresh(selectedType === 'All' ? undefined : selectedType);
+              }}
             />)}
           </div>
           <div className='align-center'>

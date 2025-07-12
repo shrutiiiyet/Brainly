@@ -16,6 +16,7 @@ declare global {
 export const UserMiddleWare = (req: Request, res: Response, next: NextFunction) => {
 
     const header = req.headers["authorization"];
+//    console.log(JWT_SECRET);
     const decodedUser = jwt.verify(header as string, JWT_SECRET);
 
     if(decodedUser) {

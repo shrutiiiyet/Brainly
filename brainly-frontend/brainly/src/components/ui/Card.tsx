@@ -4,11 +4,15 @@ import { InstagramIcon } from "../../icons/InstagramIcon";
 import { TwitterIcon } from "../../icons/TwitterIcon";
 import { FacebookIcon } from "../../icons/FacebookIcon";
 import { PinterestIcon } from "../../icons/PinterestIcon";
+import { DeleteIcon } from "../../icons/DeleteIcon";
+import axios from "axios";
+import { BACKEND_URL } from "../../config";
 
 interface CardProps {
     title:string;
     link: string;
     type: "twitter" | "youtube" | "pinterest" | "facebook" | "instagram";
+    onClick?: ()=>{}
 }
 
 export function Card(props: CardProps) {
@@ -37,6 +41,10 @@ export function Card(props: CardProps) {
                         <a href={props.link} target="_blank">
                         <ShareIcon/>
                         </a>
+                    </div>
+                    <div onClick={props.onClick} 
+                    className="pr-2 text-gray-500  cursor-pointer">
+                        <DeleteIcon/>
                     </div>
                 </div>
             </div>

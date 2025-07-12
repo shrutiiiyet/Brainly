@@ -88,7 +88,6 @@ const addContent = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     const link = req.body.link;
     const title = req.body.title;
     const type = req.body.type;
-    console.log(config_1.JWT_SECRET);
     yield db_1.ContentModel.create({
         link,
         title,
@@ -124,11 +123,18 @@ const displayContentWithFilter = (req, res) => __awaiter(void 0, void 0, void 0,
 });
 exports.displayContentWithFilter = displayContentWithFilter;
 const deleteContent = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const userId = req.userId;
     const contentId = req.body.contentId;
+    console.log(userId);
     const success = yield db_1.ContentModel.deleteOne({
         _id: contentId,
-        userId: req.userId,
     });
+    console.log(success);
+    if (success.deletedCount === 0) {
+        res.status(403).json({
+            message: "No content found"
+        });
+    }
     if (success) {
         res.json({
             message: "Content deleted"
