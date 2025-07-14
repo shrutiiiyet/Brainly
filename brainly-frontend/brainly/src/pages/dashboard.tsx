@@ -9,10 +9,12 @@ import { useContent } from '../hooks/useContent'
 import { BACKEND_URL } from '../config'
 import axios from 'axios'
 import { Greeting } from '../components/ui/Greeting'
+import { LogoutModal } from '../components/ui/LogoutModal'
 
 function DashBoard() {
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [logoutModal, setLogoutModal] = useState(false);
   const [selectedType, setSelectedType] = useState("All");
   const { contents, refresh } = useContent();
 
@@ -28,12 +30,13 @@ function DashBoard() {
   return (
     <>
     <div>
-      <SideBar selectedType={selectedType} onSelectType={handleFilterChange} />       
+      <SideBar selectedType={selectedType} onSelectType={handleFilterChange} setLogoutModal = {setLogoutModal} />       
     </div>    
     <div>
         <CreateContentModal open={modalOpen} onClose={() => {
           setModalOpen(false)
           }}/>
+          <LogoutModal open={logoutModal} onClose = {() => {setLogoutModal(false)}}/>
         <div className='p-4 ml-72 min-h-screen bg-gray-100 border-2 '>
           <div className='flex justify-end gap-4 pb-3'>
             <Button variant={'primary'}startIcon={<PlusIcon/>} text={'Add content'} size='md' onClick={() => {setModalOpen(true)}}></Button>

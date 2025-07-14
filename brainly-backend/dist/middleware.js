@@ -9,6 +9,12 @@ const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const UserMiddleWare = (req, res, next) => {
     const header = req.headers["authorization"];
     //    console.log(JWT_SECRET);
+    if (!header) {
+        res.json({
+            message: "You must sign in"
+        });
+        return;
+    }
     const decodedUser = jsonwebtoken_1.default.verify(header, config_1.JWT_SECRET);
     if (decodedUser) {
         if (typeof decodedUser === 'string') {

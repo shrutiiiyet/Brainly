@@ -7,11 +7,11 @@ import { InstagramIcon } from "../../icons/InstagramIcon";
 import { PinterestIcon } from "../../icons/PinterestIcon";
 import { LogoutIcon } from "../../icons/LogoutIncon";
 import { Button } from "./Button";
-import { useState } from "react";
 
-export function SideBar({ selectedType, onSelectType }: {
+export function SideBar({ selectedType, onSelectType, setLogoutModal }: {
     selectedType: string;
     onSelectType: (type: string) => void;
+    setLogoutModal: any;
 }) {
     
     return <>
@@ -31,7 +31,9 @@ export function SideBar({ selectedType, onSelectType }: {
                 <SidebarComponent text={"Facebook"} icon={<FacebookIcon/>} active={selectedType==="facebook"} onclick={() => {onSelectType("facebook")}}/>
             </div>
             <div className="pt-72">
-                 <Button size="md" text='Logout' startIcon={<LogoutIcon/>} onClick={()=>{}} variant='primary'></Button> 
+                 <Button size="md" text='Logout' startIcon={<LogoutIcon/>} onClick={()=>{
+                    setLogoutModal(true)
+                    }} variant='primary'></Button> 
             </div>
             </div>
     </>

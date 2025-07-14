@@ -17,6 +17,14 @@ export const UserMiddleWare = (req: Request, res: Response, next: NextFunction) 
 
     const header = req.headers["authorization"];
 //    console.log(JWT_SECRET);
+
+    if(!header) {
+        res.json({
+            message: "You must sign in"
+        })
+        return;
+    }    
+
     const decodedUser = jwt.verify(header as string, JWT_SECRET);
 
     if(decodedUser) {
